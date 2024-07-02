@@ -46,11 +46,18 @@ from typing import List
 
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        og_len = len(nums)
-        nums[:] = sorted(list(set(nums)))
-        new_len = len(nums)
-        diff = og_len - new_len
-        for i in range(diff):
-            nums.append("_")
+        # og_len = len(nums)
+        # nums[:] = sorted(list(set(nums)))
+        # new_len = len(nums)
+        # diff = og_len - new_len
+        # for i in range(diff):
+        #     nums.append("_")
         
-        return new_len
+        # return new_len
+        
+        j = 1
+        for i in range(1, len(nums)):
+            if nums[i] != nums[i-1]:
+                nums[j] = nums[i]
+                j += 1
+        return j
