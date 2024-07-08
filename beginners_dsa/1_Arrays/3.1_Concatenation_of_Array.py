@@ -29,5 +29,13 @@ n == nums.length
 1 <= n <= 1000
 1 <= nums[i] <= 1000
 """
+from typing import List
 
+class Solution:
+    def getConcatenation(self, nums: List[int]) -> List[int]:
+        ans = nums + nums
+        return ans
 
+sol = Solution()   
+nums = [1,2,1]
+print(sol.getConcatenation(nums))
