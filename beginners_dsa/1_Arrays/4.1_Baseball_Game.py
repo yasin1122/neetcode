@@ -59,3 +59,7 @@ operations[i] is "C", "D", "+", or a string representing an integer in the range
 For operation "+", there will always be at least two previous scores on the record.
 For operations "C" and "D", there will always be at least one previous score on the record.
 """
+
+l1 = [1, 2, 3]
+l1.append(int('4'))
+print(sum(l1))
