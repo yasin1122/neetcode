@@ -60,6 +60,21 @@ For operation "+", there will always be at least two previous scores on the reco
 For operations "C" and "D", there will always be at least one previous score on the record.
 """
 
-l1 = [1, 2, 3]
-l1.append(int('4'))
-print(sum(l1))
+from typing import List
+
+
+class Solution:
+    def calPoints(self, operations: List[str]) -> int:
+        scores = []
+
+        for operation in operations:
+            if operation == '+':
+                scores.append(scores[-1] + scores[-2])
+            elif operation == 'D':
+                scores.append(scores[-1]*2)
+            elif operation == 'C':
+                scores.pop()
+            else:
+                scores.append(int(operation))
+            
+        return sum(scores)
