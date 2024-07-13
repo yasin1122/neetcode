@@ -3,32 +3,39 @@ class Node:
 
     # Constructor
     def __init__(self, value) -> None:
-        pass
+        self.value = value
+        self.next = None
 
 # Linked List Class
 class LinkedList:
 
     # Constructor
     def __init__(self, value) -> None:
-        pass
+        new_node = Node(value)
+        self.head = new_node
+        self.tail = new_node
+        self.length = 1
 
-    # print list
+    # print values in the linked list
     def print_list(self) -> None:
-        pass
+        temp = self.head
+        while temp:
+            print(temp.value)
+            temp = temp.next
         
-    # append
+    # append O(1)
     def append(self, value) -> bool:
         pass
 
-    # pop (last item)
+    # pop O(n) (last item)
     def pop(self) -> Node:
         pass
 
-    # prepend
+    # prepend O(1)
     def prepend(self, value) -> bool:
         pass
 
-    # pop (first item)
+    # pop O(1) (first item)
     def pop_first(self) -> Node:
         pass
 
