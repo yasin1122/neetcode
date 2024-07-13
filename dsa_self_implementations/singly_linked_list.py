@@ -97,7 +97,11 @@ class LinkedList:
 
     # set value (change value at a set index)
     def set_value(self, index, value) -> bool:
-        pass
+        temp = self.get(index)
+        if temp:
+            temp.value = value
+            return True
+        return False
 
     # insert (new value at an index)
     def insert(self, index, value) -> bool:
