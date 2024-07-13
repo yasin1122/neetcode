@@ -71,14 +71,29 @@ class LinkedList:
         self.length += 1
         return True
 
-
     # pop O(1) (first item)
     def pop_first(self) -> Node:
-        pass
+        if self.length == 0:
+            return None
+        
+        temp = self.head
+        self.head = self.head.next
+        temp.next = None
+        self.length -= 1
 
+        if self.length == 0:
+            self.tail = None
+
+        return temp
+        
     # get
     def get(self, index) -> Node:
-        pass
+        if index < 0 or index >= self.length:
+            return None
+        temp = self.head
+        for _ in range(index):
+            temp = temp.next
+        return temp
 
     # set value (change value at a set index)
     def set_value(self, index, value) -> bool:
