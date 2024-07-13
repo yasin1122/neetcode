@@ -39,7 +39,24 @@ class LinkedList:
 
     # pop O(n) (last item)
     def pop(self) -> Node:
-        pass
+        if self.length == 0:
+            return None
+        temp = self.head
+        pre = self.head
+
+        while temp:
+            pre = temp
+            temp = temp.next
+
+        self.tail = pre
+        self.tail.next = None
+        self.length -= 1
+
+        if self.length == 0:
+            self.head = None
+            self.tail = None
+
+        return temp
 
     # prepend O(1)
     def prepend(self, value) -> bool:
